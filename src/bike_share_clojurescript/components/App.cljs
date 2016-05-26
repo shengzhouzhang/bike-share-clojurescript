@@ -1,7 +1,8 @@
 (ns bike_share_clojurescript.components.App
   (:require [reagent.core :as reagent]
             [bike_share_clojurescript.components.Header :refer (header)]
-            [bike_share_clojurescript.components.Stations :refer (stations)]))
+            [bike_share_clojurescript.components.Stations :refer (stations)]
+            [bike_share_clojurescript.repositories.request :refer (fetchStations)]))
 
 (defonce app-props
   (reagent/atom {
@@ -13,7 +14,11 @@
     ]
   }))
 
-(defn app []
+(defn render []
   [:div {:class "app-container"}
    [header (:title @app-props)]
    [stations (:stations @app-props)]])
+
+(defn app []
+  (reagent/create-class {:reagent-render render})
+)

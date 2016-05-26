@@ -19,14 +19,21 @@
                          :pretty-print true
                          :source-map true}}]}
 
-  :plugins [[lein-cljsbuild "1.0.6"]
-            [lein-figwheel "0.3.7"]]
+  :plugins [
+    [lein-cljsbuild "1.0.6"]
+    [lein-figwheel "0.3.7"]
+  ]
 
 
   :figwheel {:css-dirs ["resources/public/stylesheets"]}
 
 
-  :dependencies [[org.clojure/clojure "1.7.0"]
-                 [org.clojure/clojurescript "0.0-3308"]
-                 [reagent "0.5.0"]
-                 [org.clojure/core.async "0.1.346.0-17112a-alpha"]])
+  :dependencies [
+    [org.clojure/clojure "1.7.0"]
+    [org.clojure/clojurescript "0.0-3308"]
+    [reagent "0.5.0"]
+    [org.clojure/core.async "0.1.346.0-17112a-alpha"]
+    [cljs-ajax "0.5.5"]
+    [com.cognitect/transit-cljs "0.8.237"]
+  ]
+)
