@@ -10,6 +10,8 @@ goog.addDependency("../reagent/impl/batching.js", ['reagent.impl.batching'], ['r
 goog.addDependency("../reagent/impl/component.js", ['reagent.impl.component'], ['reagent.impl.util', 'reagent.interop', 'reagent.ratom', 'cljs.core', 'reagent.impl.batching', 'reagent.debug']);
 goog.addDependency("../reagent/impl/template.js", ['reagent.impl.template'], ['reagent.impl.util', 'reagent.interop', 'reagent.ratom', 'cljs.core', 'reagent.impl.batching', 'reagent.impl.component', 'reagent.debug', 'clojure.string']);
 goog.addDependency("../reagent/core.js", ['reagent.core'], ['reagent.impl.util', 'reagent.interop', 'reagent.ratom', 'cljs.core', 'cljsjs.react', 'reagent.impl.template', 'reagent.impl.batching', 'reagent.impl.component', 'reagent.debug']);
+goog.addDependency("../bike_share_clojurescript/components/Station.js", ['bike_share_clojurescript.components.Station'], ['reagent.core', 'cljs.core']);
+goog.addDependency("../bike_share_clojurescript/components/Stations.js", ['bike_share_clojurescript.components.Stations'], ['bike_share_clojurescript.components.Station', 'reagent.core', 'cljs.core']);
 goog.addDependency("../bike_share_clojurescript/components/Header.js", ['bike_share_clojurescript.components.Header'], ['reagent.core', 'cljs.core']);
-goog.addDependency("../bike_share_clojurescript/components/App.js", ['bike_share_clojurescript.components.App'], ['bike_share_clojurescript.components.Header', 'reagent.core', 'cljs.core']);
+goog.addDependency("../bike_share_clojurescript/components/App.js", ['bike_share_clojurescript.components.App'], ['bike_share_clojurescript.components.Stations', 'bike_share_clojurescript.components.Header', 'reagent.core', 'cljs.core']);
 goog.addDependency("../bike_share_clojurescript/client.js", ['bike_share_clojurescript.client'], ['reagent.core', 'cljs.core', 'bike_share_clojurescript.components.App']);

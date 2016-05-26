@@ -2,4 +2,7 @@
   (:require [reagent.core :as reagent]))
 
 (defn header [title]
-  [:div [:h2 {:class "title"} title]])
+  [:div {:class "header"}
+    [:h2 {:class "title"} title]
+  ]
+)
