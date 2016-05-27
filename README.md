@@ -4,9 +4,30 @@
 
 https://data.melbourne.vic.gov.au/Transport-Movement/Melbourne-bike-share/tdvh-n9dv
 
-## License
+## Isomorphic clojurescript with reagent
 
-Copyright © 2016 FIXME
+Based on http://blog.testdouble.com/posts/2016-01-21-isomorphic-clojurescript.html
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+## Requirements
+- leiningen
+- node
+
+## Usage
+
+### install node dependencies
+`npm install`
+
+### compile the server
+`lein cljsbuild once server`
+
+### compile the client
+`lein cljsbuild once client`
+
+### auto compile both server and client
+`lein cljsbuild auto server client`
+
+### run the server
+`node resources/public/js/server-side/server.js`
+
+### open a browser
+`open http://localhost:3000/`

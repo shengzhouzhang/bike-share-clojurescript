@@ -1,7 +1,10 @@
+*.iml
+/.idea
+/node_modules
+/resources/public/js
 /target
 /classes
 /checkouts
-/resources/public/javascripts
 pom.xml
 pom.xml.asc
 *.jar
