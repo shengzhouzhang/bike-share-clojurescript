@@ -1,6 +1,6 @@
-(ns bike-stations-clojurescript.core-test
+(ns bike-share-clojurescript.core-test
   (:require [clojure.test :refer :all]
-            [bike-stations-clojurescript.core :refer :all]))
+            [bike-share-clojurescript.client :refer :all]))
 
 (deftest a-test
   (testing "FIXME, I fail."

@@ -1,4 +1,4 @@
-(ns bike_share_clojurescript.components.Header
+(ns bike-share-clojurescript.components.Header
   (:require [reagent.core :as reagent]))
 
 (defn header [title]

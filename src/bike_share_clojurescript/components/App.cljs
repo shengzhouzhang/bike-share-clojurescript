@@ -1,6 +1,6 @@
-(ns bike_share_clojurescript.components.App
+(ns bike-share-clojurescript.components.App
   (:require [reagent.core :as reagent]
-            [bike_share_clojurescript.components.Header :refer (header)]))
+            [bike-share-clojurescript.components.Header :refer (header)]))
 
 (defonce app-props
   (reagent/atom {:title "bike share"}))
