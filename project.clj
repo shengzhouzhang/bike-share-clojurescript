@@ -7,7 +7,7 @@
                  [org.clojure/clojurescript "1.8.51"]
                  [reagent "0.5.1"]
                  [re-frame "0.7.0"]
-                 [secretary "1.2.3"]
+                 [bidi "2.0.9"]
                  [kibu/pushy "0.3.6"]
                  [cljs-ajax "0.5.5"]]
 

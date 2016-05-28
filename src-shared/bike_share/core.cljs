@@ -1,6 +1,5 @@
 (ns bike-share.core
-  (:require [reagent.core :refer [atom]]
-            [secretary.core :as secretary :refer-macros [defroute]]))
+  (:require [reagent.core :refer [atom]]))
 
 (def current-page (atom nil))
 
@@ -19,15 +18,10 @@
 (defn app-view []
   [:div [@current-page]])
 
-(secretary/set-config! :prefix "/")
+(defmulti set-page! :handler)
 
-(defroute "/" []
-          (.log js/console "home page")
-          (reset! current-page home-page))
+(defmethod set-page! :home-page [_]
+  (reset! current-page home-page))
 
-(defroute "/page-one" []
-          (.log js/console "page-one")
-          (reset! current-page page-one))
-
-; the server side doesn't have history, so we want to make sure current-page is populated
-(reset! current-page home-page)
+(defmethod set-page! :page-one [_]
+  (reset! current-page page-one))
