@@ -12,25 +12,29 @@ Based on http://blog.testdouble.com/posts/2016-01-21-isomorphic-clojurescript.ht
 - leiningen
 - node
 
-## Usage
-
-### install node dependencies
+## Install node dependencies
 `npm install`
 
-### compile the server
+## To compile everything
+`lein compile`
+
+This will compile server, client and less files.
+
+## To compile individual parts
+- compile the server
 `lein cljsbuild once server`
 
-### compile the client
+- compile the client
 `lein cljsbuild once client`
 
-### compile the less files to css
+- compile the less files to css
 `lein less once`
 
-### auto compile both server and client
+- auto compile both server and client
 `lein cljsbuild auto server client`
 
-### run the server
+## To run the server
 `node resources/compiled/js/server-side/server.js`
 
-### open a browser
+## Open a browser
 `open http://localhost:3000/`
