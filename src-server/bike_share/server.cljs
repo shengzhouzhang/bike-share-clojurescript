@@ -25,7 +25,9 @@
 (defn -main []
   (let [app (express)]
     (.use app "/api" (serve-static "data"))
-    (.use app "/static" (serve-static "resources/public/js/client-side"))
+    (.use app "/js" (serve-static "resources/compiled/js/client-side"))
+    (.use app "/css" (serve-static "resources/compiled/css"))
+    (.use app "/img" (serve-static "resources/img"))
     (.get app "/*" handle-request)
     (.listen app 3000 (fn []
                         (println "Server started on port 3000")))))

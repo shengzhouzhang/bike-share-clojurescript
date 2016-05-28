@@ -1,7 +1,7 @@
 *.iml
 /.idea
 /node_modules
-/resources/public/js
+/resources/compiled
 /target
 /classes
 /checkouts

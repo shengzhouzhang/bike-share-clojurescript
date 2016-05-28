@@ -11,24 +11,28 @@
                  [kibu/pushy "0.3.6"]
                  [cljs-ajax "0.5.5"]]
 
-  :plugins [[lein-cljsbuild "1.1.3"]]
+  :plugins [[lein-cljsbuild "1.1.3"]
+            [lein-less "1.7.3"]]
 
   :clean-targets ^{:protect false} ["resources"]
+
+  :less {:source-paths ["src-styles"]
+         :target-path  "resources/compiled/css"}
 
   :cljsbuild {
               :builds [{:id "server"
                         :source-paths ["src-shared" "src-server"]
                         :compiler {
                                    :main bike-share.server
-                                   :output-to "resources/public/js/server-side/server.js"
-                                   :output-dir "resources/public/js/server-side"
+                                   :output-to "resources/compiled/js/server-side/server.js"
+                                   :output-dir "resources/compiled/js/server-side"
                                    :target :nodejs
                                    :optimizations :none
                                    :source-map true}}
                        {:id "client"
                         :source-paths ["src-shared" "src-client"]
                         :compiler {
-                                   :output-to "resources/public/js/client-side/client.js"
-                                   :output-dir "resources/public/js/client-side"
+                                   :output-to "resources/compiled/js/client-side/client.js"
+                                   :output-dir "resources/compiled/js/client-side"
                                    :optimizations :none
                                    :source-map true}}]})

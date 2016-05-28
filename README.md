@@ -23,11 +23,14 @@ Based on http://blog.testdouble.com/posts/2016-01-21-isomorphic-clojurescript.ht
 ### compile the client
 `lein cljsbuild once client`
 
+### compile the less files to css
+`lein less once`
+
 ### auto compile both server and client
 `lein cljsbuild auto server client`
 
 ### run the server
-`node resources/public/js/server-side/server.js`
+`node resources/compiled/js/server-side/server.js`
 
 ### open a browser
 `open http://localhost:3000/`
