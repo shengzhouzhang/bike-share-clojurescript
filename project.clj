@@ -5,7 +5,7 @@
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.8.51"]
-                 [reagent "0.5.1"]
+                 [reagent "0.6.0-alpha"]
                  [re-frame "0.7.0"]
                  [bidi "2.0.9"]
                  [kibu/pushy "0.3.6"]
@@ -13,8 +13,6 @@
 
   :plugins [[lein-cljsbuild "1.1.3"]
             [lein-less "1.7.3"]]
-
-  :hooks [leiningen.cljsbuild leiningen.less]
 
   :clean-targets ^{:protect false} ["resources"]
 
@@ -37,4 +35,6 @@
                                        :output-to     "resources/compiled/js/client-side/client.js"
                                        :output-dir    "resources/compiled/js/client-side"
                                        :optimizations :none
-                                       :source-map    true}}]})
+                                       :source-map    true}}]}
+
+  :hooks [leiningen.cljsbuild])

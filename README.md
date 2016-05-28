@@ -18,7 +18,10 @@ Based on http://blog.testdouble.com/posts/2016-01-21-isomorphic-clojurescript.ht
 ## To compile everything
 `lein compile`
 
-This will compile server, client and less files.
+This will compile server, client.
+
+Currently, less should be manually compiled with
+`lein less once`
 
 ## To compile individual parts
 - compile the server
@@ -28,7 +31,7 @@ This will compile server, client and less files.
 `lein cljsbuild once client`
 
 - compile the less files to css
-`lein less once`
+`lein less [once|auto]`
 
 - auto compile both server and client
 `lein cljsbuild auto server client`

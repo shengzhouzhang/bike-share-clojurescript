@@ -1,7 +1,6 @@
 (ns bike-share.site
   (:require [reagent.core :as reagent]
-            [bike-share.core :as core]
-            [bike-share.routes :as routes]))
+            [bike-share.core :as core]))
 
 (enable-console-print!)
 
@@ -21,5 +20,4 @@
 
 (defn ^:export render-page [path]
   (reagent/render-to-static-markup
-    (do
-      [template {:body core/app-view}])))
+    [template {:body core/app-view}]))
