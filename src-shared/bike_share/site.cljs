@@ -1,6 +1,8 @@
 (ns bike-share.site
-  (:require [reagent.core :as reagent]
-            [bike-share.core :as core]))
+  (:require [bike-share.views :refer [app-view]]
+            [bike-share.handlers :refer [register-handlers!]]
+            [bike-share.subs :refer [register-subs!]]
+            [re-frame.core :as re-frame]))
 
 (enable-console-print!)
 
@@ -18,6 +20,7 @@
     [:script {:type                    "text/javascript"
               :dangerouslySetInnerHTML {:__html "goog.require('bike_share.client');"}}]]])
 
-(defn ^:export render-page [path]
-  (reagent/render-to-static-markup
-    [template {:body core/app-view}]))
+(defn initialise-app! []
+  (register-handlers!)
+  (register-subs!)
+  (re-frame/dispatch-sync [:initialise-db]))

@@ -2,12 +2,20 @@
   (:require [reagent.core :as reagent]
             [bidi.bidi :as bidi]
             [pushy.core :as pushy]
-            [bike-share.core :as core]
-            [bike-share.routes :as routes])
+            [bike-share.routes :as routes]
+            [bike-share.site :refer [initialise-app!]]
+            [bike-share.views :refer [app-view]])
   (:import goog.History))
 
 (enable-console-print!)
 
-(pushy/start! (pushy/pushy core/set-page! (partial bidi/match-route routes/app-routes)))
-(reagent/render-component [core/app-view] (.getElementById js/document "app"))
+(defn render! []
+  (initialise-app!)
+  (pushy/start! (pushy/pushy routes/dispatch-route! (partial bidi/match-route routes/app-routes)))
+  (reagent/render-component [app-view] (.getElementById js/document "app")))
+
+(render!)
+
+
+
 

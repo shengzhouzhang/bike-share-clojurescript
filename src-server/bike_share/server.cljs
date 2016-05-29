@@ -1,22 +1,24 @@
 (ns bike-share.server
   (:require [cljs.nodejs :as nodejs]
             [bidi.bidi :as bidi]
-            [bike-share.site :as site]
-            [bike-share.core :as core]
-            [bike-share.routes :as routes]))
+            [bike-share.site :refer [initialise-app! template]]
+            [bike-share.views :refer [app-view]]
+            [bike-share.routes :as routes]
+            [bike-share.handlers :refer [register-handlers!]]
+            [bike-share.subs :refer [register-subs!]]
+            [reagent.core :as reagent]))
 
 (nodejs/enable-util-print!)
 
-;the server side doesn't have history, so we want to make sure current-page is populated
-(defn server-dispatch! [path]
-  (core/set-page! (bidi/match-route routes/app-routes path)))
+(defn render! [path]
+  (initialise-app!)
+  (routes/dispatch-url! path)
+  (reagent/render-to-static-markup [template {:body app-view}]))
 
-;TODO: should handle error pages
 (defn handle-request [req res]
   (let [path (.-path req)]
-    (if (bidi/match-route bike-share.routes/app-routes path)
-      (do (server-dispatch! path)
-          (.send res (site/render-page path)))
+    (if (bidi/match-route routes/app-routes path)
+      (.send res (render! path))
       (.sendStatus res 404))))
 
 (def express (nodejs/require "express"))
