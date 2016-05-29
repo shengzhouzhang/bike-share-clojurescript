@@ -43,6 +43,6 @@ Currently, less should be manually compiled with
 `open http://localhost:3000/`
 
 ## References
-https://github.com/Day8/re-frame/wiki/Bootstrap-An-Application
-https://github.com/Day8/re-frame/wiki/A-Larger-App
-https://github.com/Day8/re-frame/wiki/Creating-Reagent-Components
+- https://github.com/Day8/re-frame/wiki/Bootstrap-An-Application
+- https://github.com/Day8/re-frame/wiki/A-Larger-App
+- https://github.com/Day8/re-frame/wiki/Creating-Reagent-Components
